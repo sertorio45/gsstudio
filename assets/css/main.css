@@ -38,6 +38,15 @@ h3 {
   font-size: var(--texto-pequeno) !important;   /* Falta organizar ainda  */
 }
 
+h4 {
+  font-size: 1rem !important;   /* Falta organizar ainda  */
+  font-weight: bold !important;
+}
+
+img {
+  border-radius: 10px ;
+}
+
 a {
   color: var(--color-link) !important;
   font-size: var(--text-size) !important;
@@ -96,23 +105,23 @@ a:hover {
   align-content: center !important;
   justify-content: center !important;
   height: auto !important;
-  opacity: 0; /* Inicialmente invisível */
-  transform: translateY(-20px); /* Inicia um pouco acima */
-  filter: blur(10px); /* Inicia com blur */
+  /* opacity: 0; 
+  transform: translateY(-20px);
+  filter: blur(10px); */
 }
 
-.gscard.animate {
-  animation: fadeInDownBlur 1s forwards; /* Aplica a animação */
+/* .gscard.animate {
+  animation: fadeInDownBlur 1s forwards; 
 }
 
 @keyframes fadeInDownBlur {
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0); /* Remove o blur */
+    filter: blur(0); 
   }
 }
-
+ */
 
 
 

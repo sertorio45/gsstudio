@@ -1,5 +1,11 @@
 [
   {
+    "name": "artigos-slug",
+    "path": "/artigos/:slug?",
+    "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/artigos/_slug.vue",
+    "chunkName": "pages/artigos/_slug"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/index.vue",

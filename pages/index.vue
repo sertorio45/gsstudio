@@ -37,7 +37,7 @@
                 <div class="col-4 gscard">
                   <picture>
                     <source srcset="@/static/icons/icon-design.svg">
-                    <img src="@/static/icons/icon-design.svg" class="img-fluid p-3">
+                    <img src="@/static/icons/icon-design.svg" class="img-fluid p-3" alt="Design">
                   </picture>
                   <h3>Design</h3>
                   <a href="#none">Saiba mais</a>
@@ -45,7 +45,7 @@
                 <div class="col-4 gscard">
                   <picture>
                     <source srcset="@/static/icons/icon-marketing.svg">
-                    <img src="@/static/icons/icon-marketing.svg" class="img-fluid p-3">
+                    <img src="@/static/icons/icon-marketing.svg" class="img-fluid p-3" alt="Marketing">
                   </picture>
                   <h3>Marketing</h3>
                   <a href="#none">Saiba mais</a>
@@ -53,7 +53,7 @@
                 <div class="col-4 gscard">
                   <picture>
                     <source srcset="@/static/icons/icon-tecnologia.svg">
-                    <img src="@/static/icons/icon-tecnologia.svg" class="img-fluid p-3">
+                    <img src="@/static/icons/icon-tecnologia.svg" class="img-fluid p-3" alt="Tecnologia">
                   </picture>
                   <h3>Tecnologia</h3>
                   <a href="#none">Saiba mais</a>
@@ -70,27 +70,27 @@
     <section class="py-5 text-center" id="conquistas">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-3 ">
+          <div class="col-12 col-sm-6 col-md-3">
             <div class="gscard">
-              <h3><em>+ de <em class="count" data-count="65">0</em> </em></h3>
+              <h3><em>+ de <em class="count" data-count="65">0</em></em></h3>
               <span>Sites produzidos</span>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
             <div class="gscard">
-              <h3><em>+ de <em class="count" data-count="250">0</em> </em></h3>
+              <h3><em>+ de <em class="count" data-count="250">0</em></em></h3>
               <span>Clientes ativos</span>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
             <div class="gscard">
-              <h3><em>+ de <em class="count" data-count="80">0</em> </em></h3>
+              <h3><em>+ de <em class="count" data-count="80">0</em></em></h3>
               <span>Marcas desenvolvidas</span>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
             <div class="gscard">
-              <h3><em>+ de <em class="count" data-count="7">0</em> </em></h3>
+              <h3><em>+ de <em class="count" data-count="7">0</em></em></h3>
               <span>Anos de mercado</span>
             </div>
           </div>
@@ -100,30 +100,95 @@
     <!-- Conquistas -->
     
     <!-- Parceiros -->
-<section class="min-vh-100 align-content-center justify-content-center" id="parceiros">
-  <div class="container text-center">
-    <div class="row">
-      <h2>Parceiros e clientes</h2>
-      <div id="app">
-        <div class="col">
-          <carousel></carousel>
+    <section class="bg-light min-vh-50 align-content-center justify-content-center" id="parceiros">
+      <div class="container text-center">
+        <div class="row">
+          <h2>Parceiros e clientes</h2>
+          <div id="app">
+            <div class="col">
+              <carousel></carousel>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- Parceiros -->
+    </section>
+    <!-- Parceiros -->
+
+    <!-- Solucoes e servicos -->
+    <section class="min-vh-100 align-content-center justify-content-center" id="servicos">
+      <div class="container text-center">
+        <div class="row justify-content-center align-content-center">
+          <h2>Soluções e serviços</h2>
+          <p class="my-3">
+            A GS STUDIO está comprometida com resultados. Acreditamos que a criatividade e o design, 
+            alinhados com uma estratégia eficaz, geram resultados melhores e duradouros. 
+          </p>
+          <div class="row mt-3">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="gscard">
+                <picture>
+                  <source srcset="@/static/icons/servicos/sites.svg">
+                  <img src="@/static/icons/servicos/sites.svg" class="img-fluid p-3" alt="Sites">
+                </picture>
+                <h3>Sites</h3>
+                <span><a href="">Saiba mais</a></span>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="gscard">
+                <picture>
+                  <source srcset="@/static/icons/servicos/gestao_de_conteudo.svg">
+                  <img src="@/static/icons/servicos/gestao_de_conteudo.svg" class="img-fluid p-3" alt="Redes sociais">
+                </picture>
+                <h3>Redes sociais</h3>
+                <span><a href="#none">Saiba mais</a></span>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="gscard">
+                <picture>
+                  <source srcset="@/static/icons/servicos/lojas_virtuais.svg">
+                  <img src="@/static/icons/servicos/lojas_virtuais.svg" class="img-fluid p-3" alt="Lojas virtuais">
+                </picture>
+                <h3>Lojas virtuais</h3>
+                <span><a href="#none">Saiba mais</a></span>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="gscard">
+                <picture>
+                  <source srcset="@/static/icons/servicos/branding.svg">
+                  <img src="@/static/icons/servicos/branding.svg" class="img-fluid p-3" alt="Marcas">
+                </picture>
+                <h3>Marcas</h3>
+                <span><a href="#none">Saiba mais</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col"><a href="" class="btn btn-primary"> Veja mais serviços</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Solucoes e servicos -->
+
+    <!-- Blog e Aprenda Conosco -->
+    <BlogComponent />
+    <!-- Blog e Aprenda Conosco -->
 
   </DefaultLayout>
 </template>
 
 <script>
 import DefaultLayout from '~/layouts/Default.vue'
+import BlogComponent from '~/components/BlogComponent.vue'
 
 export default {
   name: 'IndexPage',
   components: {
-    DefaultLayout
+    DefaultLayout,
+    BlogComponent
   },
   mounted() {
     const counters = document.querySelectorAll('.count');
@@ -137,7 +202,7 @@ export default {
         }
       });
     }, {
-      threshold: 1 // Iniciar a contagem quando 50% da seção estiver visível
+      threshold: 1 // Iniciar a contagem quando 100% da seção estiver visível
     });
 
     const target = document.getElementById('conquistas');
@@ -166,7 +231,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped>
@@ -184,7 +248,7 @@ export default {
 }
 
 #conquistas .gscard {
-   height: 10rem !important;
+  height: 10rem !important;
 }
 
 /* parceiros  */
@@ -214,4 +278,22 @@ export default {
 .carousel-item.active img {
   filter: blur(0);
 }
+
+/* servicos  */
+#servicos p {
+  width: calc(1100px - 30%);
+}
+
+#servicos img {
+  width: 50%;
+}
+
+#servicos .gscard {
+  width: 100%;
+  margin: 1px;
+  padding: 2rem !important;
+  height: 100% !important;
+}
+
+
 </style>

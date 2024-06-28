@@ -196,11 +196,11 @@ export async function setContext (app, context) {
       isDev: true,
       isHMR: false,
       app,
-
+      store: app.store,
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {}
+      env: {"VITE_STRAPI_URL":"https://str-gsstudio.gsstudio.com.br","VITE_STRAPI_USER":"giovanni@gsstudio.com.br","VITE_STRAPI_PASSWORD":"Agenciagsstudio","VITE_STRAPI_DOMAIN_TENANT":"gsstudio.com.br","VITE_STRAPI_TENANT_ID":"1"}
     }
     // Only set once
 

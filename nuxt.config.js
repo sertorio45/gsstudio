@@ -25,7 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/bootstrap.js', mode: 'client' }
+    { src: '~/plugins/bootstrap.js', mode: 'client' },
+    { src: '~/plugins/axios.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -37,9 +38,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/axios'
   ],
+  
+  // Configuração do axios
+  axios: {
+    baseURL: process.env.VITE_STRAPI_URL
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      plugins: [
+        ['@babel/plugin-transform-class-properties', { loose: true }],
+        ['@babel/plugin-transform-private-methods', { loose: true }],
+        ['@babel/plugin-transform-private-property-in-object', { loose: true }]
+      ]
+    }
   }
 }

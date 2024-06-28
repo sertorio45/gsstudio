@@ -4,6 +4,7 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _fa0f0192 = () => interopDefault(import('../pages/artigos/_slug.vue' /* webpackChunkName: "pages/artigos/_slug" */))
 const _5211a8a9 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -18,6 +19,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/artigos/:slug?",
+    component: _fa0f0192,
+    name: "artigos-slug"
+  }, {
     path: "/",
     component: _5211a8a9,
     name: "index"
