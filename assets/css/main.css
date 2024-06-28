@@ -90,9 +90,12 @@ a:hover {
 .gscard {
   border-radius: 20px !important;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3) !important;
-  padding: 15px !important;
+  padding: 2rem !important;
   margin: 5px !important;
   background-color: var(--branco) !important;
+  align-content: center !important;
+  justify-content: center !important;
+  height: auto !important;
 }
 
 
