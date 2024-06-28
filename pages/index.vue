@@ -66,44 +66,92 @@
     </section>
     <!-- Quem somos -->
 
-<!-- Conquistas -->
-<section class="py-5 text-center" id="conquistas">
-  <div class="container">
+    <!-- Conquistas -->
+    <section class="py-5 text-center" id="conquistas">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 ">
+            <div class="gscard">
+              <h3><em>+ de <em class="count" data-count="65">0</em> </em></h3>
+              <span>Sites produzidos</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="gscard">
+              <h3><em>+ de <em class="count" data-count="250">0</em> </em></h3>
+              <span>Clientes ativos</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="gscard">
+              <h3><em>+ de <em class="count" data-count="80">0</em> </em></h3>
+              <span>Marcas desenvolvidas</span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="gscard">
+              <h3><em>+ de <em class="count" data-count="7">0</em> </em></h3>
+              <span>Anos de mercado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Conquistas -->
+    
+    <!-- Parceiros -->
+<section class="min-vh-100 align-content-center justify-content-center" id="parceiros">
+  <div class="container text-center">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-3 ">
-        <div class="gscard">
-          <h3><em>+ de <em class="count" data-count="65">0</em> </em></h3>
-          <span>Sites produzidos</span>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="gscard">
-          <h3><em>+ de <em class="count" data-count="250">0</em> </em></h3>
-          <span>Clientes ativos</span>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="gscard">
-          <h3><em>+ de <em class="count" data-count="80">0</em> </em></h3>
-          <span>Marcas desenvolvidas</span>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="gscard">
-          <h3><em>+ de <em class="count" data-count="7">0</em> </em></h3>
-          <span>Anos de mercado</span>
+      <h2>Parceiros e clientes</h2>
+      <div id="app">
+        <div class="col">
+          <carousel></carousel>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Conquistas -->
-
-
-
+<!-- Parceiros -->
 
   </DefaultLayout>
 </template>
+
+<script>
+Vue.component('carousel', {
+  template: `
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div v-for="(image, index) in images" :key="index" :class="['carousel-item', { active: index === 0 }]" v-bind:style="{ backgroundImage: 'url(' + image + ')' }">
+          <img :src="image" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  `,
+  data() {
+    return {
+      images: [
+        'https://via.placeholder.com/800x400?text=Parceiro+1',
+        'https://via.placeholder.com/800x400?text=Parceiro+2',
+        'https://via.placeholder.com/800x400?text=Parceiro+3'
+      ]
+    };
+  }
+});
+
+new Vue({
+  el: '#app'
+});
+</script>
+
 
 <script>
 import DefaultLayout from '~/layouts/Default.vue'
@@ -173,5 +221,33 @@ export default {
 
 #conquistas .gscard {
    height: 10rem !important;
+}
+
+/* parceiros  */
+.carousel-item {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+}
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active.carousel-item-start,
+.carousel-fade .carousel-item.active.carousel-item-end {
+  transform: translateX(0);
+}
+.carousel-item img {
+  filter: blur(5px);
+  transition: filter 0.5s ease;
+}
+.carousel-item.active img {
+  filter: blur(0);
 }
 </style>
