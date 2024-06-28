@@ -118,42 +118,6 @@
 </template>
 
 <script>
-Vue.component('carousel', {
-  template: `
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div v-for="(image, index) in images" :key="index" :class="['carousel-item', { active: index === 0 }]" v-bind:style="{ backgroundImage: 'url(' + image + ')' }">
-          <img :src="image" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  `,
-  data() {
-    return {
-      images: [
-        'https://via.placeholder.com/800x400?text=Parceiro+1',
-        'https://via.placeholder.com/800x400?text=Parceiro+2',
-        'https://via.placeholder.com/800x400?text=Parceiro+3'
-      ]
-    };
-  }
-});
-
-new Vue({
-  el: '#app'
-});
-</script>
-
-
-<script>
 import DefaultLayout from '~/layouts/Default.vue'
 
 export default {
