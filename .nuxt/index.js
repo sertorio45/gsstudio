@@ -17,6 +17,7 @@ import nuxt_plugin_plugin_b3e05f82 from 'nuxt_plugin_plugin_b3e05f82' // Source:
 import nuxt_plugin_axios_6e3121d5 from 'nuxt_plugin_axios_6e3121d5' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_bootstrap_68fdc73f from 'nuxt_plugin_bootstrap_68fdc73f' // Source: ../plugins/bootstrap.js (mode: 'client')
 import nuxt_plugin_axios_5659d192 from 'nuxt_plugin_axios_5659d192' // Source: ../plugins/axios.js (mode: 'client')
+import nuxt_plugin_vuesmoothscroll_867b4ef0 from 'nuxt_plugin_vuesmoothscroll_867b4ef0' // Source: ../plugins/vue-smooth-scroll.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -84,7 +85,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"gsstudio","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Poppins:wght@400;600&display=swap"}],"style":[],"script":[]},
+    head: {"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.svg"}],"meta":[],"style":[],"script":[]},
 
     store,
     router,
@@ -227,6 +228,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_axios_5659d192 === 'function') {
     await nuxt_plugin_axios_5659d192(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuesmoothscroll_867b4ef0 === 'function') {
+    await nuxt_plugin_vuesmoothscroll_867b4ef0(app.context, inject)
   }
 
   // Lock enablePreview in context

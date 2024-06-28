@@ -1,9 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'gsstudio',
+    title: 'gs studio - Agência especializada em design, marketing e tecnologia',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'pt-br'
     },
     meta: [
       { charset: 'utf-8' },
@@ -12,8 +12,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // Adiciona a fonte Poppins do Google Fonts
+      { rel: 'svg', type: 'image/x-icon', href: '/static/favicon.svg' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' }
     ]
   },
@@ -26,7 +25,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client' },
-    { src: '~/plugins/axios.js', mode: 'client' }
+    { src: '~/plugins/axios.js', mode: 'client' },
+    { src: '~/plugins/vue-smooth-scroll.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,12 +39,30 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/dotenv',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/google-fonts',
   ],
+
+  googleFonts: {
+    families: {
+      Poppins: [400, 600]
+    },
+    display: 'swap'
+  },
+  head: {
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
+    ]
+  },
   
   // Configuração do axios
   axios: {
-    baseURL: process.env.VITE_STRAPI_URL
+    baseURL: process.env.VITE_STRAPI_URL || 'http://localhost:1337'
+  },
+
+  // Definindo o base para as rotas
+  router: {
+    base: '/gsstudio/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

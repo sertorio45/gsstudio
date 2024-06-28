@@ -4,7 +4,7 @@
         <div class="row d-flex justify-content-center align-items-center">
           <!-- Coluna da Logo -->
           <div class="col-2 d-flex justify-content-center">
-            <img src="@/static/logo.svg" alt="Logo" class="logo">
+            <img src="@/static/logotipo.svg" alt="Logo" class="logo">
           </div>
           
           <!-- Coluna da Navegação -->
