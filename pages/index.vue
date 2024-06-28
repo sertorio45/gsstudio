@@ -34,7 +34,7 @@
           <div class="col-7 text-center align-content-center content-justify-center px-5">
             <div>
               <div class="d-flex">
-                <div class="col-4 gscard">
+                <div class="col-4 gscard gscard-border gscard gscard-border-border">
                   <picture>
                     <source srcset="@/static/icons/icon-design.svg">
                     <img src="@/static/icons/icon-design.svg" class="img-fluid p-3" alt="Design">
@@ -42,7 +42,7 @@
                   <h3>Design</h3>
                   <a href="#none">Saiba mais</a>
                 </div>
-                <div class="col-4 gscard">
+                <div class="col-4 gscard gscard-border">
                   <picture>
                     <source srcset="@/static/icons/icon-marketing.svg">
                     <img src="@/static/icons/icon-marketing.svg" class="img-fluid p-3" alt="Marketing">
@@ -50,7 +50,7 @@
                   <h3>Marketing</h3>
                   <a href="#none">Saiba mais</a>
                 </div>
-                <div class="col-4 gscard">
+                <div class="col-4 gscard gscard-border">
                   <picture>
                     <source srcset="@/static/icons/icon-tecnologia.svg">
                     <img src="@/static/icons/icon-tecnologia.svg" class="img-fluid p-3" alt="Tecnologia">
@@ -71,25 +71,25 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="gscard">
+            <div class="gscard gscard-border">
               <h3><em>+ de <em class="count" data-count="65">0</em></em></h3>
               <span>Sites produzidos</span>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="gscard">
+            <div class="gscard gscard-border">
               <h3><em>+ de <em class="count" data-count="250">0</em></em></h3>
               <span>Clientes ativos</span>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="gscard">
+            <div class="gscard gscard-border">
               <h3><em>+ de <em class="count" data-count="80">0</em></em></h3>
               <span>Marcas desenvolvidas</span>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="gscard">
+            <div class="gscard gscard-border">
               <h3><em>+ de <em class="count" data-count="7">0</em></em></h3>
               <span>Anos de mercado</span>
             </div>
@@ -125,7 +125,7 @@
           </p>
           <div class="row mt-3">
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="gscard">
+              <div class="gscard gscard-border">
                 <picture>
                   <source srcset="@/static/icons/servicos/sites.svg">
                   <img src="@/static/icons/servicos/sites.svg" class="img-fluid p-3" alt="Sites">
@@ -135,7 +135,7 @@
               </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="gscard">
+              <div class="gscard gscard-border">
                 <picture>
                   <source srcset="@/static/icons/servicos/gestao_de_conteudo.svg">
                   <img src="@/static/icons/servicos/gestao_de_conteudo.svg" class="img-fluid p-3" alt="Redes sociais">
@@ -145,7 +145,7 @@
               </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="gscard">
+              <div class="gscard gscard-border">
                 <picture>
                   <source srcset="@/static/icons/servicos/lojas_virtuais.svg">
                   <img src="@/static/icons/servicos/lojas_virtuais.svg" class="img-fluid p-3" alt="Lojas virtuais">
@@ -155,7 +155,7 @@
               </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="gscard">
+              <div class="gscard gscard-border">
                 <picture>
                   <source srcset="@/static/icons/servicos/branding.svg">
                   <img src="@/static/icons/servicos/branding.svg" class="img-fluid p-3" alt="Marcas">
@@ -172,6 +172,23 @@
       </div>
     </section>
     <!-- Solucoes e servicos -->
+
+    <!-- CTA -->
+    <section class="min-vh-50 text-center gscard" id="cta">
+      <div class="container justify-content-center align-content-center bg-cta">
+        <div class="row">
+          <div class="col text-light">
+            <h2 class="text-light">Transforme Resultados com Design, Marketing e Tecnologia!</h2>
+            <div class="subheadline d-flex justify-content-center py-2">
+              <p>Potencialize seu negócio com soluções criativas e inovadoras. Nós entregamos resultados excepcionais através de estratégias personalizadas e tecnologia de ponta.</p>
+            </div>
+            <a href="#none" class="btn btn-white"><em>Começar orçamento</em></a>  
+          </div>
+        </div>
+        </div>
+
+    </section>
+    <!-- CTA -->
 
     <!-- Blog e Aprenda Conosco -->
     <BlogComponent />
@@ -247,7 +264,7 @@ export default {
   width: 100px;
 }
 
-#conquistas .gscard {
+#conquistas .gscard gscard-border {
   height: 10rem !important;
 }
 
@@ -289,11 +306,24 @@ export default {
 }
 
 #servicos .gscard {
-  width: 100%;
+  width: auto;
   margin: 1px;
   padding: 2rem !important;
   height: 100% !important;
 }
+
+#cta .container{
+  height: 50vh ;
+  border-radius: 10px;
+
+}
+#cta .col p{
+  width: calc(900px - 20%);
+
+}
+
+#cta section h2 { color: #fff;}
+
 
 
 </style>

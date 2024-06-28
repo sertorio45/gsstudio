@@ -1,11 +1,12 @@
 <template>
     <!-- Blog e Aprenda Conosco -->
-    <section class="min-vh-100 bg-light justify-content-center align-content-center" id="blog-index">
+    <section class="min-vh-100 justify-content-center align-content-center" id="blog-index">
       <div class="container">
         <div class="row">
           <h2 class="text-center py-5">Blog</h2>
           <div class="col">
-            <div class="row d-flex">
+            <div class="row d-flex gscard">
+              
               <article 
                 v-for="article in articles" 
                 :key="article.id" 
@@ -13,13 +14,13 @@
               >
                 <div class="row">
                   <picture>
-                    <source :srcset="article.imageUrl || 'https://via.placeholder.com/600x350'">
-                    <img :src="article.imageUrl || 'https://via.placeholder.com/600x350'" class="img-fluid" :alt="article.titulo">
+                    <source :srcset="`${baseURL}${article.thumb.formats.medium.url}`">
+                    <img :src="`${baseURL}${article.thumb.formats.medium.url}`" class="img-fluid pb-2" :alt="article.titulo">
                   </picture>
                   <h4 class="pt-2">
+                     <div class="mb-3"><span v-html="article.category.title" class="article-category"></span></div>
                     <nuxt-link :to="`/artigos/${article.slug}`">{{ article.titulo }}</nuxt-link>
                   </h4>
-                  <p>{{ article.excerpt }}</p>
                   <div v-html="article.content"></div>
                 </div>
               </article>
@@ -46,6 +47,11 @@
     },
     async created() {
       await this.fetchArticles();
+    },
+    data() {
+      return {
+        baseURL: process.env.VITE_STRAPI_URL
+      }
     }
   }
   </script>
@@ -60,6 +66,20 @@
     font-size: 1rem !important;
     text-decoration: underline;
     color: #000 !important;
+  }
+  #blog-index {
+    font-size: 12px;
+    color: #7a7a7a;
+  }
+
+  .article-category {
+    font-weight: normal;
+    border-radius: 100px;
+    border: 10px #000;
+    font-size: 10px;
+    padding: 3px 10px 3px 10px; 
+    background-color: #f4eaff;
+    color: var(--color-secondary);
   }
   </style>
   

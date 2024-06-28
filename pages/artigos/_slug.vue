@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h1>{{ article.titulo }}</h1>
+            <h1 v-html="article.titulo"></h1>
             <div v-html="article.content"></div>
           </div>
         </div>
