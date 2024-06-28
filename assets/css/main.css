@@ -86,7 +86,7 @@ a:hover {
 }
 
 
-/* Cards */
+/* Cards base */
 .gscard {
   border-radius: 20px !important;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3) !important;
@@ -96,7 +96,24 @@ a:hover {
   align-content: center !important;
   justify-content: center !important;
   height: auto !important;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(-20px); /* Inicia um pouco acima */
+  filter: blur(10px); /* Inicia com blur */
 }
+
+.gscard.animate {
+  animation: fadeInDownBlur 1s forwards; /* Aplica a animação */
+}
+
+@keyframes fadeInDownBlur {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0); /* Remove o blur */
+  }
+}
+
+
 
 
 /* Altura do section  */
