@@ -12,13 +12,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
     ]
   },
 
   css: [
-    '~/assets/css/main.css'
+    'bootstrap/dist/css/bootstrap.css',
+    '@/assets/css/main.css'
   ],
 
   plugins: [
@@ -61,6 +61,7 @@ export default {
         ['@babel/plugin-transform-private-methods', { loose: true }],
         ['@babel/plugin-transform-private-property-in-object', { loose: true }]
       ]
-    }
+    },
+    transpile: []
   }
 }

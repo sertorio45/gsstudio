@@ -6,6 +6,8 @@ import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+
 import '../assets/css/main.css'
 
 import '../node_modules/.cache/nuxt-google-fonts/css/nuxt-google-fonts.css'
