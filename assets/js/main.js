@@ -1,3 +1,4 @@
+
 // gscard animation
 document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll('.gscard');
@@ -19,4 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
       observer.observe(card);
     });
   });
+
+
+
+
 

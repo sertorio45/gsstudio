@@ -1,5 +1,5 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // Configurações do cabeçalho da página
   head: {
     title: 'gs studio - Agência especializada em design, marketing e tecnologia',
     htmlAttrs: {
@@ -12,35 +12,31 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'svg', type: 'image/x-icon', href: '/static/favicon.svg' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' }
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/main.css'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client' },
     { src: '~/plugins/axios.js', mode: 'client' },
     { src: '~/plugins/vue-smooth-scroll.js', mode: 'client' }
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/google-fonts',
+    '@nuxt/image',
   ],
 
   googleFonts: {
@@ -49,23 +45,15 @@ export default {
     },
     display: 'swap'
   },
-  head: {
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
-    ]
-  },
   
-  // Configuração do axios
   axios: {
     baseURL: process.env.VITE_STRAPI_URL || 'http://localhost:1337'
   },
 
-  // Definindo o base para as rotas
   router: {
     base: '/gsstudio/'
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
       plugins: [

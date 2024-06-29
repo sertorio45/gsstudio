@@ -1,9 +1,15 @@
 {
+  "App": {
+    "description": "Auto imported from components/App.vue"
+  },
   "BlogComponent": {
     "description": "Auto imported from components/BlogComponent.vue"
   },
   "Carousel": {
     "description": "Auto imported from components/Carousel.vue"
+  },
+  "Contato": {
+    "description": "Auto imported from components/Contato.vue"
   },
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
@@ -13,5 +19,8 @@
   },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "TypebotContact": {
+    "description": "Auto imported from components/TypebotContact.vue"
   }
 }
