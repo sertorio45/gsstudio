@@ -9,8 +9,8 @@
               <h1>Aumente a <em>performance</em> da sua <em>empresa.</em></h1>
               <p class="my-4">Destaque sua empresa à frente de seus concorrentes com estratégias de branding, marketing e tecnologia.</p>
               <div class="d-flex justify-content-center">
-                <nuxt-link to="#sobre" v-smooth-scroll class="btn btn-primary">Nos conheça um pouco</nuxt-link>
-                <nuxt-link to="#contato" v-smooth-scroll class="btn btn-primary-border">Entre em contato rapidamente</nuxt-link>
+                <button @click="scrollToElement('#sobre')" class="btn btn-primary">Nos conheça um pouco</button>
+                <button @click="scrollToElement('./contato')" class="btn btn-primary-border">Entre em contato rapidamente</button>
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@
                 Na GS STUDIO, combinamos criatividade e estratégias comprovadas para desenvolver campanhas de marketing eficazes e impactantes.
                 Nossos especialistas em tecnologia oferecem soluções personalizadas para maximizar a eficiência do seu negócio.
               </p>
-              <nuxt-link to="#index" v-smooth-scroll class="btn btn-primary">Nos conheça um pouco</nuxt-link>
+              <!-- <button @click="scrollToElement('#index')" class="btn btn-primary">Nos conheça um pouco</button> -->
             </div>
 
             <div class="col-7 text-center align-content-center content-justify-center px-5">
@@ -38,17 +38,17 @@
                   <div class="col-4 gscard gscard-border gscard gscard-border-border">
                     <img :src="designIcon" class="img-fluid p-3" alt="Design" loading="lazy" />
                     <h3>Design</h3>
-                    <nuxt-link to="#none">Saiba mais</nuxt-link>
+                    <a href="#none">Saiba mais</a>
                   </div>
                   <div class="col-4 gscard gscard-border">
                     <img :src="marketingIcon" class="img-fluid p-3" alt="Marketing" loading="lazy" />
                     <h3>Marketing</h3>
-                    <nuxt-link to="#none">Saiba mais</nuxt-link>
+                    <a href="#none">Saiba mais</a>
                   </div>
                   <div class="col-4 gscard gscard-border">
                     <img :src="technologyIcon" class="img-fluid p-3" alt="Tecnologia" loading="lazy" />
                     <h3>Tecnologia</h3>
-                    <nuxt-link to="#none">Saiba mais</nuxt-link>
+                    <a href="#none">Saiba mais</a>
                   </div>
                 </div>
               </div>
@@ -120,33 +120,33 @@
                 <div class="gscard gscard-border">
                   <img :src="sitesIcon" class="img-fluid p-3" alt="Sites" loading="lazy" />
                   <h3>Sites</h3>
-                  <span><nuxt-link to="#none">Saiba mais</nuxt-link></span>
+                  <span><a href="#none">Saiba mais</a></span>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="gscard gscard-border">
                   <img :src="socialMediaIcon" class="img-fluid p-3" alt="Redes sociais" loading="lazy" />
                   <h3>Redes sociais</h3>
-                  <span><nuxt-link to="#none">Saiba mais</nuxt-link></span>
+                  <span><a href="#none">Saiba mais</a></span>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="gscard gscard-border">
                   <img :src="ecommerceIcon" class="img-fluid p-3" alt="Lojas virtuais" loading="lazy" />
                   <h3>Lojas virtuais</h3>
-                  <span><nuxt-link to="#none">Saiba mais</nuxt-link></span>
+                  <span><a href="#none">Saiba mais</a></span>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="gscard gscard-border">
                   <img :src="brandingIcon" class="img-fluid p-3" alt="Marcas" loading="lazy" />
                   <h3>Marcas</h3>
-                  <span><nuxt-link to="#none">Saiba mais</nuxt-link></span>
+                  <span><a href="#none">Saiba mais</a></span>
                 </div>
               </div>
             </div>
             <div class="row mt-5">
-              <div class="col"><nuxt-link to="#none" v-smooth-scroll class="btn btn-primary"> Veja mais serviços</nuxt-link></div>
+              <div class="col"><button @click="scrollToElement('#none')" class="btn btn-primary"> Veja mais serviços</button></div>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@
               <div class="subheadline d-flex justify-content-center py-2">
                 <p>Potencialize seu negócio com soluções criativas e inovadoras. Nós entregamos resultados excepcionais através de estratégias personalizadas e tecnologia de ponta.</p>
               </div>
-              <nuxt-link to="#none" v-smooth-scroll class="btn btn-white"><em>Começar orçamento</em></nuxt-link>  
+              <button @click="scrollToElement('#none')" class="btn btn-white"><em>Começar orçamento</em></button>  
             </div>
           </div>
         </div>
@@ -176,8 +176,9 @@
   </DefaultLayout>
 </template>
 
+
 <script>
-import DefaultLayout from '~/layouts/Default.vue'
+import DefaultLayout from '~/layouts/DefaultLayout.vue'
 import designIcon from '~/static/icons/icon-design.svg'
 import marketingIcon from '~/static/icons/icon-marketing.svg'
 import technologyIcon from '~/static/icons/icon-tecnologia.svg'
@@ -191,7 +192,6 @@ export default {
   components: {
     DefaultLayout,
     BlogComponent: () => import('~/components/BlogComponent.vue'),
-    Contato: () => import('~/components/Contato.vue'),
   },
   data() {
     return {
@@ -246,14 +246,25 @@ export default {
 
         updateCount();
       });
+    },
+    scrollToElement(element) {
+      const headerOffset = 50; // Ajuste este valor conforme necessário
+      const elementPosition = document.querySelector(element).offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 }
+
 </script>
 
 <style scoped>
 #index h1 {
-  font-size: var(--texto-grande) !important;
+  font-size: var(--texto-grande);
 }
 #index p {
   font-size: var(--texto-medio) !important;

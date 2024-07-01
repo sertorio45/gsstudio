@@ -31,6 +31,10 @@ export const routerOptions = {
     path: "/",
     component: _5211a8a9,
     name: "index"
+  }, {
+    path: "/contato",
+    component: _2256a641,
+    name: "contato"
   }],
 
   fallback: false

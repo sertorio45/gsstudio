@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import VueSmoothScroll from 'vue-smooth-scroll';
+import VueScrollTo from 'vue-scrollto';
 
-Vue.use(VueSmoothScroll);
+Vue.use(VueScrollTo);

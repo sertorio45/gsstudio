@@ -19,5 +19,11 @@
     "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_5211a8a9"
+  },
+  {
+    "name": "contato",
+    "path": "/contato",
+    "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/contato.vue",
+    "_name": "_2256a641"
   }
 ]

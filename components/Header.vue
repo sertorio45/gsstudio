@@ -1,13 +1,13 @@
 <!-- components/Header.vue -->
 <template>
-  <header class="w-100 bg-light shadow custom-header">
+  <header class="w-100 shadow custom-header">
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <!-- Coluna da Logo -->
         <div class="col-2 d-flex justify-content-center">
           <a href="/" class="d-flex">
-          <img src="/favicon.svg" alt="Logo" class="simbolo" />
-          <img src="/logo.webp" alt="Logo" class="logo" />
+          <img src="favicon.svg" alt="Logo" class="simbolo" />
+          <img src="logo.webp" alt="Logo" class="logo" />
           </a>
         </div>
         
