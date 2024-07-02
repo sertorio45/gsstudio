@@ -94,9 +94,20 @@ a:hover {
 }
 
 .btn-white:hover {
-  background-color: var(--color-light) !important;
+  background-color: var(--color-dark) !important;
   color: var(--color-primary) !important;
   border: 2px solid var(--color-success) !important;
+}
+
+.btn-back {
+  background-color: transparent !important;
+  color: var(--color-dark) !important;
+  border: 2px solid var(--color-dark) !important;
+}
+
+.btn-back:hover {
+  border: 2px solid var(--color-secondary) !important;
+  color: var(--color-secondary) !important;
 }
 
 .text-justify {
