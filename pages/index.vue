@@ -274,8 +274,8 @@ export default {
   width: 100px !important;
 }
 
-#conquistas .count {
-  font-size: 2rem;
+#conquistas h3 {
+  font-size: 1.5em !important;
   font-weight: bold;
 }
 

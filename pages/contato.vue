@@ -2,11 +2,15 @@
   <DefaultLayout>
     <section class="contact-section d-flex align-items-center justify-content-center vh-100">
       <div class="container">
-        <h1 class="mb-5 text-center">Entre em contato</h1>
+        <div class="text-center mb-4">
+          <h1>Contato</h1>
+          <p>Selecione como quer falar conosco.</p>
+        </div>
+        
         <div class="row justify-content-center text-center" v-if="!currentComponent">
           <div class="col mb-3">
-            <button @click="showComponent('Form')" class="btn btn-primary btn-block">Formulário de Contato</button>
-            <button @click="showComponent('TypebotContact')" class="btn btn-primary btn-block">Converse Conosco</button>
+            <button @click="showComponent('Form')" class="btn btn-primary btn-block">Formulário tradicional</button>
+            <button @click="showComponent('TypebotContact')" class="btn btn-primary btn-block">Formulário interativo</button>
           </div>
         </div>
         <div v-else>

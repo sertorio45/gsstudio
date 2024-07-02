@@ -8,8 +8,8 @@
         </div>
         <div class="col-12 d-flex justify-content-center">
           <iframe
-            src="https://bot.gsstudio.com.br/iniciar"
-            style="border: none; width: 100%; height: 400px"
+            src="https://bot.gsstudio.com.br/gera-o-de-leads-3bwkf35"
+            style="border: none; width: 50%; height: 400px"
           ></iframe>
         </div>
       </div>
@@ -19,18 +19,7 @@
 
 <script>
 export default {
-  mounted() {
-    const typebotInitScript = document.createElement("script");
-    typebotInitScript.type = "module";
-    typebotInitScript.innerHTML = `
-      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.60/dist/web.js';
-      Typebot.initStandard({
-        typebot: "iniciar",
-        apiHost: "https://bot.gsstudio.com.br",
-      });
-    `;
-    document.body.append(typebotInitScript);
-  },
+
 };
 </script>
 

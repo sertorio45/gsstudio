@@ -11,34 +11,20 @@
           <ul class="m-0 list-unstyled">
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Overview
+                Hospedagem de sites
               </a>
             </li>
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Integrations
+                Gerenciador de contatos (CRM)
               </a>
             </li>
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Extensions
+                Inteligência Artificial
               </a>
             </li>
-            <li class="mb-1">
-              <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Docs
-              </a>
-            </li>
-            <li class="mb-1">
-              <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Calendar
-              </a>
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -91,36 +77,36 @@
       </div>
       <div class="col-6 col-md-3">
         <div class="link-wrapper">
-          <h4 class="mb-3 fw-bold fs-6">Compare</h4>
+          <h4 class="mb-3 fw-bold fs-6">Mapa do site</h4>
           <ul class="m-0 list-unstyled">
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Events
+                Sobre nós
               </a>
             </li>
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Demos
+                Serviços
               </a>
             </li>
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Learning
+                Produtos
               </a>
             </li>
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Webinars
+                Contato
               </a>
             </li>
             <li class="mb-1">
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Customers
+                Política de privacidade
               </a>
             </li>
             <li>
               <a href="#!" class="link-underline-opacity-0 link-opacity-75-hover link-underline-opacity-100-hover link-offset-1 link-secondary">
-                Framer
+                Dúvidas frequentes
               </a>
             </li>
           </ul>

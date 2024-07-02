@@ -1,6 +1,6 @@
 <!-- components/Header.vue -->
 <template>
-  <header class="w-100 shadow custom-header">
+  <header class="w-100 shadow custom-header bg-light">
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <!-- Coluna da Logo -->
