@@ -25,7 +25,8 @@
     "vue-scrollto": "^2.20.0",
     "vue-server-renderer": "^2.7.10",
     "vue-slick-carousel": "^1.0.6",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vuesax": "^3.12.2"
   },
   "devDependencies": {}
 }

@@ -21,14 +21,16 @@ export default {
   // Configuração de CSS global
   css: [
     'bootstrap/dist/css/bootstrap.css',
-    '@/assets/css/main.css'
+    '@/assets/css/main.css',
+    'vuesax/dist/vuesax.css' // Vuesax styles
   ],
 
   // Plugins a serem carregados antes de montar o aplicativo
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client' },
     { src: '~/plugins/axios.js', mode: 'client' },
-    { src: '~/plugins/vue-smooth-scroll.js', mode: 'client' }
+    { src: '~/plugins/vue-smooth-scroll.js', mode: 'client' },
+    { src: '~/plugins/vuesax.js', mode: 'client' }
   ],
 
   // Auto importação de componentes
