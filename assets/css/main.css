@@ -20,6 +20,25 @@
   --texto-grande: 5rem;
   --texto-medio: 2rem;
   --texto-pequeno: 1.25rem;
+
+  --vs-primary: #ff3366 ;
+}
+
+.vs-con-textarea h4 {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  padding: 8px;
+  padding-bottom: 8px;
+  padding-bottom: 0;
+  cursor: default;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  border-radius: 5px 5px 0 0;
+}
+
+.vs-select--label {
+  font-size: 14px !important;
+  color: rgba(0,0,0,.6);
 }
 
 body {

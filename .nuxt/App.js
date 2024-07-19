@@ -12,6 +12,8 @@ import '../assets/css/main.css'
 
 import '../node_modules/vuesax/dist/vuesax.css'
 
+import '../node_modules/material-design-icons-iconfont/dist/material-design-icons.css'
+
 import '../node_modules/.cache/nuxt-google-fonts/css/nuxt-google-fonts.css'
 
 import _933ae716 from '../layouts/DefaultLayout.vue'

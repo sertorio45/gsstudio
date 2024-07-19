@@ -8,31 +8,43 @@
         <div class="col-md-6 gscard-border p-5">
           <form @submit.prevent="submitForm">
             <div class="form-group">
-              <label for="name">Nome</label>
-              <input type="text" id="name" class="form-control" v-model="form.name" required />
+              <vs-input label-placeholder="Nome"
+                v-model="form.name"
+                label="Nome"
+                name="name"
+                required
+                class="mb-4"
+              ></vs-input>
+              <vs-input label-placeholder="E-mail" placeholder="E-mail"
+                v-model="form.email"
+                type="email"
+                label="Email"
+                name="email"
+                required
+                class="mb-4"
+              ></vs-input>
+              <vs-select
+                v-model="form.area"
+                
+                placeholder="Selecione o assunto"
+                required
+                class="mb-4"
+              >
+                <vs-select-item value="suporte" text="Suporte"></vs-select-item>
+                <vs-select-item value="vendas" text="Vendas"></vs-select-item>
+                <vs-select-item value="geral" text="Geral"></vs-select-item>
+              </vs-select>
+              <vs-textarea
+                v-model="form.message"
+                label="Mensagem"
+                name="message"
+                placeholder="Digite sua mensagem"
+                required
+                class="mb-4"
+              ></vs-textarea>
+              <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" class="form-control" v-model="form.email" required />
-            </div>
-            <div class="form-group">
-              <label for="area">Área</label>
-              <select id="area" class="form-control" v-model="form.area" required>
-                <option value="" disabled>Selecione a área</option>
-                <option value="suporte">Suporte</option>
-                <option value="vendas">Vendas</option>
-                <option value="geral">Geral</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Mensagem</label>
-              <textarea id="message" class="form-control" v-model="form.message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
           </form>
-          <!-- Botões de Teste
-          <button @click="showSuccessNotification" class="btn btn-success mt-3">Testar Sucesso</button>
-          <button @click="showErrorNotification" class="btn btn-danger mt-3">Testar Erro</button> -->
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -63,7 +75,7 @@ export default {
           color: 'success',
           position: 'bottom-right',
           time: 2000,
-          text: `<div style="color: white; text-align: center;" >Mensagem enviada com sucesso!</div>`
+          text: `<div style="color: white; text-align: center;">Mensagem enviada com sucesso!</div>`
         });
         this.resetForm();
       } catch (error) {
@@ -73,7 +85,7 @@ export default {
           color: 'danger',
           position: 'bottom-right',
           time: 2000,
-          text: `<div style="color: white; text-align: center;" >Mensagem enviada com sucesso!</div>`
+          text: `<div style="color: white; text-align: center;">${errorMessage}</div>`
         });
       }
     },
@@ -84,35 +96,21 @@ export default {
         area: '',
         message: ''
       };
-    },
-    showSuccessNotification() {
-      this.$vs.notify({
-        color: 'success',
-        position: 'bottom-right',
-        time: 2000,
-        text: `<div style="color: white; text-align: center;" >Mensagem enviada com sucesso!</div>`
-      });
-    },
-    showErrorNotification() {
-      this.$vs.notify({
-        color: 'danger',
-        position: 'bottom-right',
-        time: 2000,
-        text: `<div style="color: white; text-align: center;">Erro ao enviar a mensagem.</div>`
-      });
     }
   }
 };
 </script>
 
 <style scoped>
-.vs-component {
-     top: 1000px !important;
-}
 .btn-back {
   align-self: flex-start;
 }
 .form-group {
   padding: 5px;
 }
+.vs-input--label {
+
+}
+
+
 </style>

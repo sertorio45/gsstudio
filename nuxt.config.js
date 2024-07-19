@@ -22,7 +22,8 @@ export default {
   css: [
     'bootstrap/dist/css/bootstrap.css',
     '@/assets/css/main.css',
-    'vuesax/dist/vuesax.css' // Vuesax styles
+    'vuesax/dist/vuesax.css', // Vuesax styles
+    'material-design-icons-iconfont/dist/material-design-icons.css'
   ],
 
   // Plugins a serem carregados antes de montar o aplicativo
