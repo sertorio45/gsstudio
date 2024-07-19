@@ -14,10 +14,10 @@
               <div class="row">
                 <picture v-if="hasThumbnail(article)">
                   <source :srcset="getImageUrl(article.thumb.formats.thumbnail.url)">
-                  <img :src="getImageUrl(article.thumb.formats.thumbnail.url)" class="img-fluid pb-2" :alt="article.titulo">
+                  <img :src="getImageUrl(article.thumb.formats.thumbnail.url)" class="img-fluid mb-2" :alt="article.titulo">
                 </picture>
                 <img v-else src="https://via.placeholder.com/400x400" class="img-fluid pb-2" alt="Default Image">
-                <h4 class="pt-2">
+                <h4 class="mt-2">
                   <div class="mb-3">
                     <span v-html="article.category.title" class="article-category"></span>
                   </div>

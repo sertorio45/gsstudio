@@ -195,6 +195,27 @@ em {
     background-position: 0% 50%;
   }
 }
+em {
+  font-style: normal !important;
+  background: linear-gradient(270deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+  background-size: 600% 600% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: gradientAnimation 5s ease infinite !important;
+  display: inline-block;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 em + em {
   background: linear-gradient(270deg, var(--color-secondary), var(--color-primary), var(--color-secondary)) !important;
@@ -203,4 +224,23 @@ em + em {
   -webkit-text-fill-color: transparent !important;
   animation: gradientAnimation 5s ease infinite reverse !important;
   display: inline-block;
+}
+
+
+.topo {
+  height: 10rem !important;
+  padding-top:7rem;
+  background-color: var(--color-light);
+
+}
+
+.topo h1{
+  font-size: var(--text-size);
+  padding: 0;
+
+}
+
+.vs-input {
+  width: 100% !important;
+
 }

@@ -16,7 +16,7 @@
           <nav>
             <ul class="nav justify-content-center">
               <li class="nav-item">
-                <a class="nav-link" href="/">Página inicial</a>
+                <NuxtLink to="/" class="nav-link">Página inicial</NuxtLink>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Produtos</a>
@@ -31,7 +31,7 @@
                 <a class="nav-link" href="#">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contato">Contato</a>
+                <NuxtLink to="/contato" class="nav-link">Contato</NuxtLink>
               </li>
             </ul>
           </nav>

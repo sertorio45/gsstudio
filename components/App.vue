@@ -1,12 +1,10 @@
 <template>
-    <div id="app">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </div>
-  </template>
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>
   
   <script>
   export default {
@@ -15,11 +13,14 @@
   </script>
   
   <style>
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 2s;
-  }
-  .fade-enter, .fade-leave-to {
-    opacity: 50;
-  }
+    .page-enter-active,
+    .page-leave-active {
+      transition: all 0.4s;
+    }
+    .page-enter-from,
+    .page-leave-to {
+      opacity: 0;
+      filter: blur(0,8rem);
+    }
   </style>
   

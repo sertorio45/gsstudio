@@ -15,14 +15,20 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
-    ]
+    ],
+    // script: [
+    //   {
+    //     src: 'https://www.google.com/recaptcha/api.js?render=6Lc3T3AaAAAAAHl2NwoxkDpnzck6XAqqwv4caQy4',
+    //     async: true,
+    //     defer: true
+    //   }
+    // ]
   },
 
   // Configuração de CSS global
   css: [
     'bootstrap/dist/css/bootstrap.css',
     '@/assets/css/main.css',
-    'vuesax/dist/vuesax.css', // Vuesax styles
     'material-design-icons-iconfont/dist/material-design-icons.css'
   ],
 
@@ -67,9 +73,7 @@ export default {
     extendRoutes(routes, resolve) {
       routes.push(
         {
-          name: 'contato',
           path: '/contato',
-          component: resolve(__dirname, 'pages/contato.vue')
         }
       )
     }
@@ -84,9 +88,8 @@ export default {
         ['@babel/plugin-transform-private-property-in-object', { loose: true }]
       ]
     },
-    transpile: []
+    transpile: ['vuesax-next'],
   },
-
   // Middleware do servidor
   serverMiddleware: [
     { path: '/api/send-email', handler: '~/server-middleware.js' }

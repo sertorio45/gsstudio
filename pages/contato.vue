@@ -1,25 +1,45 @@
 <template>
   <DefaultLayout>
-    <section class="contact-section d-flex align-items-center justify-content-center vh-100">
+    <!-- Fale conosco -->
+    <section class="topo">
       <div class="container">
-        <div class="text-center mb-4">
-          <h1>Contato</h1>
-          <p>Selecione como quer falar conosco.</p>
-        </div>
-        
-        <div class="row justify-content-center text-center" v-if="!currentComponent">
-          <div class="col mb-3">
-            <button @click="showComponent('Form')" class="btn btn-primary btn-block">Formulário tradicional</button>
-            <button @click="showComponent('TypebotContact')" class="btn btn-primary btn-block">Formulário interativo</button>
+        <div class="row">
+          <div class="col d-flex align-items-center">
+            <NuxtLink to="/" class="m-1">Página inicial</NuxtLink> / <h1 class="m-1">Contato</h1>
           </div>
-        </div>
-        <div v-else>
-          <transition name="fade" mode="out-in">
-            <component :is="currentComponent" @go-back="resetComponent" />
-          </transition>
         </div>
       </div>
     </section>
+    <section id="contato">
+      <div class="container py-5 my-5">
+        <div class="row align-items-center">
+          <div class="col-4">
+            <h2>Fale conosco</h2>
+            <p>
+              Preencha o formulário ou entre em contato em algum dos nossos canais e em breve vamos entrar em contato.
+            </p>
+            <div class="mt-4">
+              <div class="contact-item">
+                <div class="icon-circle">
+                  <span class="material-icons">phone</span>
+                </div>
+                <span>Telefone: (xx) xxxx-xxxx</span>
+              </div>
+              <div class="contact-item">
+                <div class="icon-circle">
+                  <span class="material-icons">location_on</span>
+                </div>
+                <span>Localização: Rua Exemplo, 123</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-8">
+            <Form />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fale conosco -->
   </DefaultLayout>
 </template>
 
@@ -51,5 +71,40 @@ export default {
 </script>
 
 <style scoped>
-/* Adicione seus estilos aqui, se necessário */
+.topo .col {
+  display: flex;
+  align-items: center;
+}
+
+.topo .col h1 {
+  margin-left: 5px;
+  display: inline;
+  font-weight: normal !important;
+  color: #000;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  margin-right: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-item span.material-icons {
+  font-size: 24px;
+}
+
+#contato .btn {
+  margin-top: 15px;
+}
 </style>
