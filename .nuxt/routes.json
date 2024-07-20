@@ -3,21 +3,26 @@
     "name": "contato",
     "path": "/contato",
     "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/contato.vue",
-    "chunkName": "pages/contato"
+    "chunkName": "pages/contato",
+    "_name": "_2256a641"
   },
   {
     "name": "artigos-slug",
     "path": "/artigos/:slug?",
     "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/artigos/_slug.vue",
-    "chunkName": "pages/artigos/_slug"
+    "chunkName": "pages/artigos/_slug",
+    "_name": "_fa0f0192"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_5211a8a9"
   },
   {
-    "path": "/contato"
+    "path": "/contato",
+    "component": "/Users/giovannisertorio/Desktop/Sites/gsstudio/pages/contato.vue",
+    "_name": "_2256a641"
   }
 ]

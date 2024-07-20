@@ -1,6 +1,7 @@
 :root {
+  --color-secondary-rgb: 30, 0, 255; /* Substitua pelos valores RGB da sua cor secundária */
   --color-primary: #FF3366;
-  --color-secondary: #4932FA;
+  --color-secondary: #1e00ff;
   --color-success: #28a745;
   --color-info: #17a2b8;
   --color-warning: #ffc107;
@@ -88,34 +89,114 @@ a:hover {
   background-color: var(--color-secondary) !important;
   color: var(--branco) !important;
   border: 2px solid var(--color-secondary) !important;
+  position: relative; /* Para pseudo-elementos */
+  overflow: hidden; /* Para pseudo-elementos */
+  transition: all 0.7s linear; /* Transição suave para todos os estados */
+  transform: translateY(0) scale(1); /* Estado inicial */
+  box-shadow: 0 8px 10px rgba(30, 0, 255, 0); /* Estado inicial */
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: all 0.7s linear; /* Transição suave */
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
 }
 
 .btn-primary:hover {
   background-color: var(--color-link-hover) !important;
   color: var(--branco) !important;
+  transform: translateY(-2px) scale(1); /* Eleva e aumenta ligeiramente o botão */
+  box-shadow: 0 10px 20px rgba(30, 0, 255, 0.4); /* Sombra suave com opacidade */
+}
+
+.btn-primary:active {
+  transform: translateY(0px) scale(1); /* Levemente menos elevado */
+  box-shadow: 0 8px 15px rgba(30, 0, 255, 0.4); /* Sombra reduzida */
 }
 
 .btn-primary-border {
   background-color: transparent !important;
   color: var(--color-secondary) !important;
   border: 2px solid var(--color-secondary) !important;
+  position: relative; /* Para pseudo-elementos */
+  overflow: hidden; /* Para pseudo-elementos */
+  transition: all 0.7s linear; /* Transição suave */
+}
+
+.btn-primary-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: all 0.7s linear; /* Transição suave */
+}
+
+.btn-primary-border:hover::before {
+  opacity: 1;
 }
 
 .btn-primary-border:hover {
   background-color: var(--color-link-hover) !important;
   color: var(--branco) !important;
+  border: 2px solid var(--color-link-hover) !important; /* Transição suave para a borda */
+  transform: translateY(-2px) scale(1); /* Eleva e aumenta ligeiramente o botão */
+  box-shadow: 0 10px 20px rgba(30, 0, 255, 0.4); /* Sombra suave com opacidade */
 }
 
+.btn-primary-border:active {
+  transform: translateY(0px) scale(1); /* Levemente menos elevado */
+  box-shadow: 0 8px 15px rgba(30, 0, 255, 0.4); /* Sombra reduzida */
+}
 .btn-white {
   background-color: var(--branco) !important;
   color: var(--color-primary) !important;
   border: 2px solid var(--branco) !important;
+  position: relative; /* Para pseudo-elementos */
+  overflow: hidden; /* Para pseudo-elementos */
+  transition: all 0.7s linear; /* Transição suave */
+}
+
+.btn-white::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: all 0.7s linear; /* Transição suave */
+}
+
+.btn-white:hover::before {
+  opacity: 1;
 }
 
 .btn-white:hover {
-  background-color: var(--color-dark) !important;
+  background-color: var(--branco) !important;
   color: var(--color-primary) !important;
-  border: 2px solid var(--color-success) !important;
+  border: 2px solid var(--color-danger) !important; /* Transição suave para a borda */
+  transform: translateY(-2px) scale(1); /* Eleva e aumenta ligeiramente o botão */
+  box-shadow: 0 10px 20px rgba(255, 0, 102, 0.4); /* Sombra suave com opacidade */
+}
+
+.btn-white:active {
+  transform: translateY(0px) scale(1); /* Levemente menos elevado */
+  box-shadow: 0 8px 15px rgba(30, 0, 255, 0.4); /* Sombra reduzida */
 }
 
 .btn-back {
@@ -139,7 +220,7 @@ a:hover {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3) !important;
 
  }
-.gscard {
+ .gscard {
   padding: 2rem !important;
   margin: 5px !important;
   align-content: center !important;
@@ -147,26 +228,21 @@ a:hover {
   height: auto !important;
   opacity: 0;
   transform: translateY(-20px);
-  filter: blur(10px);
+  filter: blur(20px);
 }
 
 .gscard.animate {
-  animation: fadeInDownBlur 1s forwards; 
+  animation: fadeInDownBlur 0.5s forwards;
 }
 
-
 @keyframes fadeInDownBlur {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-    filter: blur(10px); 
-  }
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0); 
+    filter: blur(0);
   }
 }
+
 
 .bg-cta { background-color: var(--color-bg-cta) !important; }
 
@@ -230,7 +306,7 @@ em + em {
 .topo {
   height: 10rem !important;
   padding-top:7rem;
-  background-color: var(--color-light);
+  background-color: var(--color-light) !important;
 
 }
 
@@ -243,4 +319,14 @@ em + em {
 .vs-input {
   width: 100% !important;
 
+}
+
+.article-category {
+  font-weight: normal;
+  border-radius: 100px;
+  border: 10px #000;
+  font-size: 13px;
+  padding: 3px 10px;
+  background-color: #f4eaff;
+  color: var(--color-secondary);
 }

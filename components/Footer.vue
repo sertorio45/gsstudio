@@ -285,7 +285,7 @@
   
   <style scoped>
   footer {
-    background-color: #f8f9fa;
+    background-color: #fff;
     padding: 10px;
   }
   </style>

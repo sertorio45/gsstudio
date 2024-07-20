@@ -85,10 +85,10 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 20%; /* Adjusted width for a more subtle effect */
+    width: 40%; /* Adjusted width for a more subtle effect */
     z-index: 2;
     pointer-events: none;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent);
   }
   
   .fade-right {

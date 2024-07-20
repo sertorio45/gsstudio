@@ -70,12 +70,20 @@ export default {
   // Configuração do roteamento
   router: {
     base: '/gsstudio/',
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition;
+      } else {
+        return { x: 0, y: 0 };
+      }
+    },
     extendRoutes(routes, resolve) {
       routes.push(
         {
           path: '/contato',
+          component: resolve(__dirname, 'pages/contato.vue')
         }
-      )
+      );
     }
   },
 

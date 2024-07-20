@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <!-- Coluna da Logo -->
-        <div class="col-2 d-flex justify-content-center">
+        <div class="col-2">
           <a href="/" class="d-flex">
           <img src="favicon.svg" alt="Logo" class="simbolo" />
           <img src="logo.webp" alt="Logo" class="logo" />
@@ -62,23 +62,8 @@ export default {
   max-width: 2rem;
   height: auto;
   margin-right: 0.3rem;
-  animation: spin 4s linear infinite;
-  transform-origin: center;
-  animation-play-state: paused; /* Inicialmente pausada */
 }
 
-.logo:hover {
-  animation-play-state: running; /* Inicia a animação ao passar o mouse sobre a logo */
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .custom-header {
   position: fixed;

@@ -29,13 +29,12 @@
                 Na GS STUDIO, combinamos criatividade e estratégias comprovadas para desenvolver campanhas de marketing eficazes e impactantes.
                 Nossos especialistas em tecnologia oferecem soluções personalizadas para maximizar a eficiência do seu negócio.
               </p>
-              <!-- <button @click="scrollToElement('#index')" class="btn btn-primary">Nos conheça um pouco</button> -->
             </div>
 
             <div class="col-7 text-center align-content-center content-justify-center px-5">
               <div>
                 <div class="d-flex">
-                  <div class="col-4 gscard gscard-border gscard gscard-border-border">
+                  <div class="col-4 gscard gscard-border">
                     <img :src="designIcon" class="img-fluid p-3" alt="Design" loading="lazy" />
                     <h3>Design</h3>
                     <a href="#none">Saiba mais</a>
@@ -92,7 +91,7 @@
       <!-- Conquistas -->
 
       <!-- Parceiros -->
-      <section class="bg-light min-vh-50 align-content-center justify-content-center" id="parceiros">
+      <section class="min-vh-50 align-content-center justify-content-center" id="parceiros">
         <div class="container text-center">
           <div class="row">
             <h2>Parceiros e clientes</h2>
@@ -107,7 +106,7 @@
       <!-- Parceiros -->
 
       <!-- Solucoes e servicos -->
-      <section class="min-vh-100 align-content-center justify-content-center" id="servicos">
+      <section class="min-vh-100 align-content-center justify-content-center bg-light" id="servicos">
         <div class="container text-center">
           <div class="row justify-content-center align-content-center">
             <h2>Soluções e serviços</h2>
@@ -154,8 +153,8 @@
       <!-- Solucoes e servicos -->
 
       <!-- CTA -->
-      <section class="min-vh-50 text-center gscard" id="cta">
-        <div class="container justify-content-center align-content-center bg-cta">
+      <section class="text-center gscard my-5" id="cta">
+        <div class="container justify-content-center align-content-center bg-cta my-5 ">
           <div class="row">
             <div class="col text-light">
               <h2 class="text-light">Transforme Resultados com Design, Marketing e Tecnologia!</h2>
@@ -175,7 +174,6 @@
     </main>
   </DefaultLayout>
 </template>
-
 
 <script>
 import DefaultLayout from '~/layouts/DefaultLayout.vue'
@@ -205,9 +203,38 @@ export default {
     };
   },
   mounted() {
+    this.initCardAnimation();
     this.initCounters();
+    this.$router.afterEach((to, from) => {
+      if (to.name === 'index') {
+        setTimeout(() => {
+          this.initCardAnimation();
+        }, 100);
+      }
+    });
   },
   methods: {
+    initCardAnimation() {
+      const cards = document.querySelectorAll('.gscard');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const randomDelay = Math.random() * 1000; // Random delay between 0 and 1000ms
+            setTimeout(() => {
+              entry.target.classList.add('animate');
+              observer.unobserve(entry.target); // Stop observing once animated
+            }, randomDelay);
+          }
+        });
+      }, {
+        threshold: 0.5 // Adjust this value as needed
+      });
+
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    },
     initCounters() {
       const counters = document.querySelectorAll('.count');
       const speed = 9000; // Tempo de execução em milissegundos
@@ -259,8 +286,9 @@ export default {
     }
   }
 }
-
 </script>
+
+
 
 <style scoped>
 #index h1 {
@@ -331,5 +359,12 @@ export default {
 }
 #cta section h2 {
   color: #fff !important;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

@@ -1,33 +1,52 @@
 <template>
   <!-- Blog e Aprenda Conosco -->
-  <section class="min-vh-100 justify-content-center align-content-center" id="blog-index">
-    <div class="container">
+  <section class="justify-content-center align-content-center my-5 bg-light min-vh-100" id="blog-index">
+    <div class="container my-5">
       <div class="row">
-        <h2 class="text-center py-5">Blog</h2>
-        <div class="col">
-          <div class="row d-flex gscard">
-            <article 
-              v-for="article in articles" 
-              :key="article.id" 
-              class="col-12 col-sm-6 col-md-3"
+        <h2 class="text-center">Blog</h2>
+        <div class="col-12 mt-5">
+          <div class="row">
+            <div
+              v-for="article in articles"
+              :key="article.id"
+              class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
             >
-              <div class="row">
-                <picture v-if="hasThumbnail(article)">
-                  <source :srcset="getImageUrl(article.thumb.formats.thumbnail.url)">
-                  <img :src="getImageUrl(article.thumb.formats.thumbnail.url)" class="img-fluid mb-2" :alt="article.titulo">
-                </picture>
-                <img v-else src="https://via.placeholder.com/400x400" class="img-fluid pb-2" alt="Default Image">
-                <h4 class="mt-2">
-                  <div class="mb-3">
-                    <span v-html="article.category.title" class="article-category"></span>
+              <vs-card class="vs-card-custom" type="1">
+                <template #img>
+                  <img 
+                    v-if="hasThumbnail(article)" 
+                    :src="getImageUrl(article.thumb.url)" 
+                    class="img-fluid mb-2" 
+                    :alt="article.titulo" 
+                    style="width: 400px;">
+                  <img 
+                    v-else 
+                    src="thumb_blog_gsstudio.webp" 
+                    class="img-fluid pb-2" 
+                    alt="Default Image">
+                </template>
+                <template #title>
+                  <div class="mt-2">
+                    <div class="mb-3">
+                      <span v-html="article.category.title" class="article-category"></span>
+                    </div>
+                    <h3 class="blog-title">
+                      <a :href="`/artigos/${article.slug}`">{{ article.titulo }}</a>
+                    </h3>
                   </div>
-                  <nuxt-link :to="`/artigos/${article.slug}`">{{ article.titulo }}</nuxt-link>
-                </h4>
-                <div v-html="article.content"></div>
-              </div>
-            </article>
+                </template>
+                <template #text>
+                  <p></p>
+                </template>
+              </vs-card>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col">
+        <button @click="scrollToElement('#none')" class="btn btn-primary">Ver mais</button>
       </div>
     </div>
   </section>
@@ -47,51 +66,82 @@ export default {
   methods: {
     ...mapActions('articles', ['fetchArticles']),
     hasThumbnail(article) {
-      return article.thumb 
-        && article.thumb.formats 
-        && article.thumb.formats.thumbnail;
+      return article.thumb && article.thumb.url;
     },
     getImageUrl(path) {
-      const url = `${this.baseURL}${path}`;
-      console.log('Generated image URL:', url); // Log para depuração
+      const baseURL = process.env.VITE_STRAPI_URL || 'http://localhost:1337';
+      const url = new URL(path, baseURL).href;
+      console.log('Generated image URL:', url);
       return url;
+    },
+    scrollToElement(element) {
+      const headerOffset = 50; // Ajuste este valor conforme necessário
+      const elementPosition = document.querySelector(element).offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   },
   async created() {
     await this.fetchArticles();
-    console.log('Base URL:', this.baseURL); // Log para verificar a baseURL
   },
-  data() {
-    return {
-      baseURL: process.env.VITE_STRAPI_URL || 'http://localhost:1337' // Definir uma URL padrão para testes locais
-    }
+  mounted() {
+    window.scrollTo(0, 0);
   }
 }
 </script>
 
 <style scoped>
 #blog-index a {
-  font-size: 1rem !important;
   color: #000 !important;
   text-decoration: none;
 }
 #blog-index a:hover {
-  font-size: 1rem !important;
-  text-decoration: underline;
   color: #000 !important;
-}
-#blog-index {
-  font-size: 12px;
-  color: #7a7a7a;
+  text-decoration: underline;
 }
 
-.article-category {
-  font-weight: normal;
-  border-radius: 100px;
-  border: 10px #000;
-  font-size: 10px;
-  padding: 3px 10px;
-  background-color: #f4eaff;
-  color: var(--color-secondary);
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.d-flex.align-items-stretch {
+  display: flex;
+  align-items: stretch;
+}
+
+.vs-card-custom {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.row.flex-fill {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-12.col-sm-6.col-md-4.col-lg-3.mb-4.d-flex.align-items-stretch {
+  display: flex;
+  flex: 1;
+}
+
+.vs-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gscard {
+  padding: 0 !important;
+  height: 100% !important;
 }
 </style>
