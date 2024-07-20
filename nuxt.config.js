@@ -16,13 +16,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
     ],
-    // script: [
-    //   {
-    //     src: 'https://www.google.com/recaptcha/api.js?render=6Lc3T3AaAAAAAHl2NwoxkDpnzck6XAqqwv4caQy4',
-    //     async: true,
-    //     defer: true
-    //   }
-    // ]
   },
 
   // Configuração de CSS global
@@ -37,14 +30,17 @@ export default {
     { src: '~/plugins/bootstrap.js', mode: 'client' },
     { src: '~/plugins/axios.js', mode: 'client' },
     { src: '~/plugins/vue-smooth-scroll.js', mode: 'client' },
-    { src: '~/plugins/vuesax.js', mode: 'client' }
+    { src: '~/plugins/vuesax.js', mode: 'client' },
+    { src: '~/plugins/vue-gallery.js', mode: 'client' },
   ],
 
   // Auto importação de componentes
   components: true,
 
   // Módulos de build
-  buildModules: [],
+  buildModules: [
+    
+  ],
 
   // Módulos do Nuxt.js
   modules: [
@@ -98,8 +94,10 @@ export default {
     },
     transpile: ['vuesax-next'],
   },
+
   // Middleware do servidor
   serverMiddleware: [
+    bodyParser.json(),
     { path: '/api/send-email', handler: '~/server-middleware.js' }
   ]
 }

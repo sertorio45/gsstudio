@@ -16,13 +16,13 @@
                   <img 
                     v-if="hasThumbnail(article)" 
                     :src="getImageUrl(article.thumb.url)" 
-                    class="img-fluid mb-2" 
+                    class="img-fluid" 
                     :alt="article.titulo" 
                     style="width: 400px;">
                   <img 
                     v-else 
                     src="thumb_blog_gsstudio.webp" 
-                    class="img-fluid pb-2" 
+                    class="img-fluid" 
                     alt="Default Image">
                 </template>
                 <template #title>
@@ -134,11 +134,6 @@ export default {
   flex: 1;
 }
 
-.vs-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 
 .gscard {
   padding: 0 !important;

@@ -105,6 +105,17 @@
       </section>
       <!-- Parceiros -->
 
+      <!-- Portifolio -->
+      <section class="align-content-center justify-content-center min-vh-100" id="parceiros">
+        <div class="container text-center">
+          <div class="row">
+            <h2>Portifolio</h2>
+              
+          </div>
+        </div>
+      </section>
+      <!-- Portifolio -->
+
       <!-- Solucoes e servicos -->
       <section class="min-vh-100 align-content-center justify-content-center bg-light" id="servicos">
         <div class="container text-center">
@@ -176,14 +187,14 @@
 </template>
 
 <script>
-import DefaultLayout from '~/layouts/DefaultLayout.vue'
-import designIcon from '~/static/icons/icon-design.svg'
-import marketingIcon from '~/static/icons/icon-marketing.svg'
-import technologyIcon from '~/static/icons/icon-tecnologia.svg'
-import sitesIcon from '~/static/icons/servicos/sites.svg'
-import socialMediaIcon from '~/static/icons/servicos/gestao_de_conteudo.svg'
-import ecommerceIcon from '~/static/icons/servicos/lojas_virtuais.svg'
-import brandingIcon from '~/static/icons/servicos/branding.svg'
+import DefaultLayout from '~/layouts/DefaultLayout.vue';
+import designIcon from '~/static/icons/icon-design.svg';
+import marketingIcon from '~/static/icons/icon-marketing.svg';
+import technologyIcon from '~/static/icons/icon-tecnologia.svg';
+import sitesIcon from '~/static/icons/servicos/sites.svg';
+import socialMediaIcon from '~/static/icons/servicos/gestao_de_conteudo.svg';
+import ecommerceIcon from '~/static/icons/servicos/lojas_virtuais.svg';
+import brandingIcon from '~/static/icons/servicos/branding.svg';
 
 export default {
   name: 'IndexPage',
@@ -202,18 +213,10 @@ export default {
       brandingIcon,
     };
   },
-  mounted() {
-    this.initCardAnimation();
-    this.initCounters();
-    this.$router.afterEach((to, from) => {
-      if (to.name === 'index') {
-        setTimeout(() => {
-          this.initCardAnimation();
-        }, 100);
-      }
-    });
-  },
   methods: {
+    importAll(r) {
+      return r.keys().map(r);
+    },
     initCardAnimation() {
       const cards = document.querySelectorAll('.gscard');
 
@@ -284,10 +287,24 @@ export default {
         behavior: 'smooth'
       });
     }
+  },
+  mounted() {
+    this.initCardAnimation();
+    this.initCounters();
+    this.$router.afterEach((to, from) => {
+      if (to.name === 'index') {
+        setTimeout(() => {
+          this.initCardAnimation();
+        }, 100);
+      }
+    });
   }
-}
+};
 </script>
 
+<style scoped>
+/* Adicione seus estilos personalizados aqui */
+</style>
 
 
 <style scoped>

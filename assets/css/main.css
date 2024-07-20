@@ -63,7 +63,7 @@ h4 {
 }
 
 img {
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 
 a {
@@ -329,4 +329,45 @@ em + em {
   padding: 3px 10px;
   background-color: #f4eaff;
   color: var(--color-secondary);
+}
+.vs-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px !important;
+}
+
+.vs-card__img{
+  border-radius: 10px !important;
+}
+
+.slick-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0); /* Remove saturation for all images */
+  transition: filter 0.3s ease;
+}
+
+.blur {
+  filter: saturate(0) blur(2px); /* Adding a subtle blur to the images */
+}
+
+.no-blur {
+  filter: saturate(0) !important; /* Ensure no blur is applied to these images */
+}
+
+.fade-left, .fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%; /* Adjusted width for a more subtle effect */
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
 }
